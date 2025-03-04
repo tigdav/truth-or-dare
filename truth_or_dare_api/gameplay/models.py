@@ -23,7 +23,7 @@ class Question(models.Model):
         verbose_name='Тип вопроса'
     )
 
-    categories = models.ForeignKey(
+    category = models.ForeignKey(
         QuestionCategory,
         on_delete=models.CASCADE,
         related_name='questions',
