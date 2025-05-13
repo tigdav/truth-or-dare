@@ -14,3 +14,13 @@ class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ['id', 'text', 'question_type', 'category']
+
+
+class QuestionRequestSerializer(serializers.Serializer):
+    question_type = serializers.ChoiceField(choices=['truth', 'dare'])
+    category_ids = serializers.ListField(
+        child=serializers.IntegerField(), allow_empty=False
+    )
+    excluded_ids = serializers.ListField(
+        child=serializers.IntegerField(), required=False
+    )
