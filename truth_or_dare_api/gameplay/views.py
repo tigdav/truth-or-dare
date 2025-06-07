@@ -1,8 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status, viewsets
-from .models import Question, QuestionCategory
-from .serializers import QuestionSerializer, QuestionRequestSerializer, QuestionCategorySerializer
+from .models import Question, QuestionCategory, Rule
+from .serializers import QuestionSerializer, QuestionRequestSerializer, QuestionCategorySerializer, RuleSerializer
 import random
 
 
@@ -27,7 +27,6 @@ def get_random_questions(request):
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
@@ -36,3 +35,7 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class QuestionCategoryViewSet(viewsets.ModelViewSet):
     queryset = QuestionCategory.objects.all()
     serializer_class = QuestionCategorySerializer
+
+class RuleViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Rule.objects.all()
+    serializer_class = RuleSerializer

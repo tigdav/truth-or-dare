@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Question, QuestionCategory
+from .models import Question, QuestionCategory, Rule
 
 
 class QuestionCategorySerializer(serializers.ModelSerializer):
@@ -24,3 +24,9 @@ class QuestionRequestSerializer(serializers.Serializer):
     excluded_ids = serializers.ListField(
         child=serializers.IntegerField(), required=False
     )
+
+
+class RuleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rule
+        fields = ['text']
