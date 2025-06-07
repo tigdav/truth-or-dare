@@ -36,3 +36,16 @@ class Question(models.Model):
     class Meta:
         verbose_name = 'Вопрос'
         verbose_name_plural = 'Вопросы'
+
+
+class Rule(models.Model):
+    text = models.TextField(verbose_name='Текст страницы с правилами')
+    order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
+
+    class Meta:
+        verbose_name = 'Страница с правилами'
+        verbose_name_plural = 'Страницы с правилами'
+        ordering = ['order']
+
+    def __str__(self):
+        return f'Страница {self.order + 1}'
