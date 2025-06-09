@@ -6,6 +6,8 @@ class QuestionCategory(models.Model):
     description = models.TextField(verbose_name='Краткое описание')
     is_adult = models.BooleanField(default=False, verbose_name='Категория для взрослых (18+)')
 
+    icon = models.FileField(upload_to='category_icons/', blank=True, null=True, verbose_name='Иконка')
+
     def __str__(self):
         return self.name
 
