@@ -5,7 +5,7 @@ from .models import Question, QuestionCategory, Rule
 class QuestionCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionCategory
-        fields = ['id', 'name', 'description', 'is_adult']
+        fields = ['id', 'name', 'description', 'icon', 'is_adult']
 
 
 class QuestionSerializer(serializers.ModelSerializer):
