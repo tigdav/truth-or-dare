@@ -9,6 +9,6 @@ router.register(r'categories', QuestionCategoryViewSet)
 router.register(r'rules', RuleViewSet, basename='rules')
 
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('api/questions/random/', get_random_questions, name='get_random_questions'),
+    path('questions/random/', get_random_questions, name='get_random_questions'),
+    path('', include(router.urls)),
 ]
