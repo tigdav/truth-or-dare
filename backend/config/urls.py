@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.gameplay.urls')),
+    path('api/', include('apps.gameplay.urls')),
 ]
 
 if settings.DEBUG:
