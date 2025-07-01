@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets
 from .models import Question, QuestionCategory, Rule
 from .serializers import QuestionSerializer, QuestionRequestSerializer, QuestionCategorySerializer, RuleSerializer
-import random
+from django.db.models.functions import Random
 
 
 @api_view(['POST'])
@@ -19,13 +19,13 @@ def get_random_questions(request):
             category__id__in=category_ids
         ).exclude(id__in=excluded_ids)
 
-        questions = list(queryset)
-        selected_questions = random.sample(questions, min(len(questions), 5))
+        random_questions = queryset.order_by(Random())[:5]
 
-        serialized = QuestionSerializer(selected_questions, many=True)
+        serialized = QuestionSerializer(random_questions, many=True)
         return Response(serialized.data)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
@@ -35,6 +35,7 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class QuestionCategoryViewSet(viewsets.ModelViewSet):
     queryset = QuestionCategory.objects.all()
     serializer_class = QuestionCategorySerializer
+
 
 class RuleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Rule.objects.all()
