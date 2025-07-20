@@ -9,7 +9,7 @@ class QuestionCategorySerializer(serializers.ModelSerializer):
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    category = QuestionCategorySerializer(read_only=True)
+    category = serializers.PrimaryKeyRelatedField(queryset=QuestionCategory.objects.all())
 
     class Meta:
         model = Question
