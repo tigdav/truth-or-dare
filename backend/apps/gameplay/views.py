@@ -4,6 +4,7 @@ from rest_framework import status, viewsets
 from .models import Question, QuestionCategory, Rule
 from .serializers import QuestionSerializer, QuestionRequestSerializer, QuestionCategorySerializer, RuleSerializer
 from django.db.models.functions import Random
+from rest_framework.permissions import IsAdminUser
 
 
 @api_view(['POST'])
@@ -30,6 +31,7 @@ def get_random_questions(request):
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+    permission_classes = [IsAdminUser]
 
 
 class QuestionCategoryViewSet(viewsets.ModelViewSet):
