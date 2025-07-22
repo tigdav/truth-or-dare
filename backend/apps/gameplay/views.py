@@ -5,6 +5,7 @@ from .models import Question, QuestionCategory, Rule
 from .serializers import QuestionSerializer, QuestionRequestSerializer, QuestionCategorySerializer, RuleSerializer
 from django.db.models.functions import Random
 from rest_framework.permissions import IsAdminUser
+from .permissions import IsAdminOrReadOnly
 
 
 @api_view(['POST'])
@@ -37,8 +38,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class QuestionCategoryViewSet(viewsets.ModelViewSet):
     queryset = QuestionCategory.objects.all()
     serializer_class = QuestionCategorySerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class RuleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Rule.objects.all()
     serializer_class = RuleSerializer
+    permission_classes = [IsAdminOrReadOnly]
