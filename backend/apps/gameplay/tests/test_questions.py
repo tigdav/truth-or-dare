@@ -7,14 +7,14 @@ from apps.gameplay.models import Question, QuestionCategory
 def test_create_dare_question_in_strange_habits_category():
     category = QuestionCategory.objects.create(
         id=6,
-        name="Странные привычки",
-        description="Необычные ритуалы, повседневные причуды и личные особенности.",
+        name="Unusual Habits",
+        description="Quirky rituals, everyday oddities, and personal peculiarities.",
         is_adult=False
     )
 
     client = APIClient()
     data = {
-        "text": "Сделай 10 приседаний, повторяя своё любимое странное слово.",
+        "text": "Do 10 squats while repeating your favorite weird word.",
         "question_type": "dare",
         "category": category.id
     }

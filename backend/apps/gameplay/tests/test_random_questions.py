@@ -6,14 +6,14 @@ from apps.gameplay.models import Question, QuestionCategory
 @pytest.mark.django_db
 def test_random_questions_selection():
     category = QuestionCategory.objects.create(
-        name="Близкое окружение",
-        description="Вопросы о друзьях, семье, коллегах и личных границах.",
+        name="Close Circle",
+        description="Questions about friends, family, coworkers, and personal boundaries.",
         is_adult=False
     )
 
     for i in range(10):
         Question.objects.create(
-            text=f"Правда ли, что это вопрос номер {i}?",
+            text=f"Is it true that this is question number {i}?",
             question_type="truth",
             category=category
         )
@@ -34,6 +34,6 @@ def test_random_questions_selection():
     for question in response.data:
         assert question["question_type"] == "truth"
         assert question["category"] == category.id
-        assert "text" in question and question["text"].startswith("Правда ли")
+        assert "text" in question and question["text"].startswith("Is it true")
 
     assert all(q["id"] not in request_data["excluded_ids"] for q in response.data)
