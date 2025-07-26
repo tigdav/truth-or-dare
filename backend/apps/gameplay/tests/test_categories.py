@@ -7,8 +7,8 @@ from apps.gameplay.models import QuestionCategory
 def test_create_category():
     client = APIClient()
     data = {
-        "name": "Детство и воспоминания",
-        "description": "Ностальгические истории, игры и забавные моменты из детства.",
+        "name": "Childhood & Memories",
+        "description": "Nostalgic stories, games, and funny moments from the past.",
         "is_adult": False
     }
 
