@@ -1,5 +1,6 @@
 import pytest
 from rest_framework.test import APIClient
+from django.contrib.auth.models import User
 from apps.gameplay.models import Question, QuestionCategory
 
 
@@ -12,7 +13,11 @@ def test_create_dare_question_in_strange_habits_category():
         is_adult=False
     )
 
+    User.objects.create_user(username='admin', password='adminpass', is_staff=True)
+
     client = APIClient()
+    client.login(username='admin', password='adminpass')
+
     data = {
         "text": "Do 10 squats while repeating your favorite weird word.",
         "question_type": "dare",
