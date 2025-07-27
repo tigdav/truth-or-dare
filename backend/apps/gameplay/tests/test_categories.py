@@ -1,11 +1,15 @@
 import pytest
 from rest_framework.test import APIClient
+from django.contrib.auth.models import User
 from apps.gameplay.models import QuestionCategory
 
 
 @pytest.mark.django_db
 def test_create_category():
+    User.objects.create_user(username='admin', password='adminpass', is_staff=True)
     client = APIClient()
+    client.login(username='admin', password='adminpass')
+
     data = {
         "name": "Childhood & Memories",
         "description": "Nostalgic stories, games, and funny moments from the past.",
