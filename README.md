@@ -140,162 +140,10 @@ DB_HOST=localhost
 DB_PORT=5432
 ```
 
----
+## 📡 API Documentation
 
-## 📡 API Overview
-
-| Endpoint                 | Method           | Access       | Description                               |
-|--------------------------|------------------|--------------|-------------------------------------------|
-| `/api/questions/random/` | POST             | Public       | Get 5 random questions based on filters   |
-| `/api/questions/`        | GET, POST        | Admin Only   | List or create questions                  |
-| `/api/questions/<id>/`   | GET, PUT, DELETE | Admin Only   | Retrieve, update, or delete a question    |
-| `/api/categories/`       | GET              | Public       | List all question categories              |
-| `/api/categories/`       | POST             | Admin Only   | Create a new category                     |
-| `/api/categories/<id>/`  | GET, PUT, DELETE | Public/Admin | View, update, or delete a single category |
-| `/api/rules/`            | GET              | Public       | Retrieve all rule pages                   |
-| `/api/rules/<id>/`       | GET              | Public       | Retrieve a specific rule by ID            |
-
----
-
-## 🔄 Random Question Fetch Example
-
-**Endpoint:**  
-`POST /api/questions/random/`
-
-**Request Body:**
-
-```json
-{
-  "question_type": "dare",
-  "category_ids": [
-    1,
-    2
-  ],
-  "excluded_ids": [
-    5,
-    12
-  ]
-}
-```
-
-**Response:**
-
-```json
-[
-  {
-    "id": 17,
-    "text": "Do 10 pushups.",
-    "question_type": "dare",
-    "category": 1
-  },
-  {
-    "id": 18,
-    "text": "Tell your most embarrassing moment.",
-    "question_type": "truth",
-    "category": 2
-  }
-]
-```
-
-Response includes up to 5 unique questions per request; if fewer matching questions are available, fewer will be
-returned.
-
-- `question_type` — `"truth"` or `"dare"`
-- `category_ids` — List of category IDs
-- `excluded_ids` — Optional; list of already shown question IDs
-
----
-
-## 📜 Rules Endpoints
-
-### Get All Rules
-
-```http
-GET /api/rules/
-```
-
-**Response:**
-
-```json
-[
-  {
-    "id": 1,
-    "text": "Players take turns clockwise."
-  },
-  {
-    "id": 2,
-    "text": "You may skip one question per game."
-  }
-]
-```
-
-### Get Rule by ID
-
-```http
-GET /api/rules/2/
-```
-
-**Response:**
-
-```json
-  {
-  "id": 2,
-  "text": "You may skip one question per game."
-}
-```
-
----
-
-## 🗂️ Category Endpoints
-
-### Get All Categories
-
-```http
-GET /api/categories/
-```
-
-**Response:**
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Party",
-    "is_adult": false
-  },
-  {
-    "id": 2,
-    "name": "Romantic",
-    "is_adult": true
-  },
-  {
-    "id": 3,
-    "name": "Funny",
-    "is_adult": false
-  },
-  {
-    "id": 4,
-    "name": "18+",
-    "is_adult": true
-  }
-]
-```
-
-### Get Category by ID
-
-```http
-GET /api/categories/1/
-```
-
-**Response:**
-
-```json
-  {
-  "id": 1,
-  "name": "Party",
-  "is_adult": false
-}
-```
+The API reference, including available endpoints, request/response examples, and usage notes,  
+is provided in a separate document: [docs/api.md](./docs/api.md).
 
 ---
 
@@ -344,7 +192,9 @@ truth-or-dare/
 │           ├── urls.py
 │           ├── views.py
 │           ├── migrations/ # Database migration files
-│           └── tests/ # Integration tests
+│           └── tests/      # Integration tests
+├── docs/
+│   └── api.md              # API documentation
 ├── .gitignore
 └── README.md
 ```
