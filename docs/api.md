@@ -70,13 +70,13 @@ All endpoints below are relative to the base URL.
     "id": 17,
     "text": "Do 10 pushups.",
     "question_type": "dare",
-    "category": 1
+    "category_id": 1
   },
   {
     "id": 19,
     "text": "Sing a song loudly in the room.",
     "question_type": "dare",
-    "category": 2
+    "category_id": 2
   }
 ]
 ```
@@ -85,7 +85,8 @@ All endpoints below are relative to the base URL.
 > If fewer matching questions are available (e.g., only 2 meet the filters), then fewer will be returned.
 
 - `question_type` — `"truth"` or `"dare"`
-- `category_ids` — List of category IDs
+- `category_ids` — List of category IDs (request filter)
+- `category_id` - ID of the category this question belongs to (response)
 - `excluded_ids` — Optional; list of already shown question IDs
 
 ---

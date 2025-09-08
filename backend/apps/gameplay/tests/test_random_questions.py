@@ -33,7 +33,7 @@ def test_random_questions_selection():
 
     for question in response.data:
         assert question["question_type"] == "truth"
-        assert question["category"] == category.id
+        assert question["category_id"] == category.id
         assert "text" in question and question["text"].startswith("Is it true")
 
     assert all(q["id"] not in request_data["excluded_ids"] for q in response.data)

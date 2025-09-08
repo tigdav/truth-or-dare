@@ -21,7 +21,7 @@ def test_create_dare_question_in_strange_habits_category():
     data = {
         "text": "Do 10 squats while repeating your favorite weird word.",
         "question_type": "dare",
-        "category": category.id
+        "category_id": category.id
     }
 
     response = client.post("/api/questions/", data, format='json')
