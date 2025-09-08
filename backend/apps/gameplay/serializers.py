@@ -9,11 +9,15 @@ class QuestionCategorySerializer(serializers.ModelSerializer):
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    category = serializers.PrimaryKeyRelatedField(queryset=QuestionCategory.objects.all())
+    category_id = serializers.PrimaryKeyRelatedField(
+        source='category',
+        queryset=QuestionCategory.objects.all(),
+        required=True
+    )
 
     class Meta:
         model = Question
-        fields = ['id', 'text', 'question_type', 'category']
+        fields = ['id', 'text', 'question_type', 'category_id']
 
 
 class QuestionRequestSerializer(serializers.Serializer):
