@@ -1,4 +1,4 @@
-# 🎯 Truth or Dare API
+# 🎯 Truth or Dare
 
 ![Python](https://img.shields.io/badge/Python-3.11.2-blue?logo=python&style=flat-square)
 ![Django](https://img.shields.io/badge/Django-5.1.6-%234092E5?logo=django&logoColor=white&style=flat-square)
@@ -68,7 +68,7 @@ interface.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/TigDav/truth-or-dare.git
+git clone https://github.com/tigdav/truth-or-dare.git
 cd truth-or-dare/backend
 ```
 
