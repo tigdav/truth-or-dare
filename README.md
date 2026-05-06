@@ -201,15 +201,6 @@ truth-or-dare/
 
 ---
 
-## 🎨 Design
-
-This project includes a complete **Figma prototype for the client-side SPA (UI/UX)**,  
-designed by [Alex Molin](https://www.behance.net/jmolin).
-
-👉 [View Figma Design](https://www.figma.com/design/5JBovXHX7dw2vTX4UM6ufF/%D0%9F%D0%94?node-id=720-838&t=ReYbUMopEBKzaLpY-1)
-
----
-
 ## 📝 License
 
 This project is licensed under the MIT License.  
