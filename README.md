@@ -9,7 +9,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
 
-**Truth or Dare API** is a lightweight, production-ready RESTful backend for the classic party game *Truth or Dare*,
+**Truth or Dare API** is a lightweight, self-contained RESTful backend for the classic party game *Truth or Dare*,
 built with Django REST Framework.
 
 It provides random, categorized questions filtered by player preferences, along with game rules and content filtering (
@@ -42,8 +42,8 @@ interface.
   Built following Django best practices with a clear separation of concerns and a RESTful API design.
 
 - ✅ **Automated Testing with Pytest**  
-  Comprehensive test coverage using `pytest` and `pytest-django`, including unit and integration tests for all major
-  endpoints.
+  Automated tests using `pytest` and `pytest-django` cover core gameplay flows such as question creation,
+  category creation, and random question selection.
 
 ---
 
@@ -161,7 +161,7 @@ Or with Pytest:
 pytest apps/gameplay/
 ```
 
-Comprehensive tests cover key functionality and endpoints.
+The test suite covers core gameplay flows and endpoint behavior.
 
 ---
 
@@ -196,6 +196,7 @@ truth-or-dare/
 ├── docs/
 │   └── api.md              # API documentation
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 

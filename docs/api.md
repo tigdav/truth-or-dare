@@ -104,11 +104,9 @@ GET /api/rules/
 ```json
 [
   {
-    "id": 1,
     "text": "Players take turns clockwise."
   },
   {
-    "id": 2,
     "text": "You may skip one question per game."
   }
 ]
@@ -123,8 +121,7 @@ GET /api/rules/2/
 **Response:**
 
 ```json
-  {
-  "id": 2,
+{
   "text": "You may skip one question per game."
 }
 ```
@@ -146,21 +143,15 @@ GET /api/categories/
   {
     "id": 1,
     "name": "Party",
+    "description": "Light-hearted prompts for any party setting.",
+    "icon": "/media/category_icons/party.png",
     "is_adult": false
   },
   {
     "id": 2,
     "name": "Romantic",
-    "is_adult": true
-  },
-  {
-    "id": 3,
-    "name": "Funny",
-    "is_adult": false
-  },
-  {
-    "id": 4,
-    "name": "18+",
+    "description": "Questions and dares for couples or close friends.",
+    "icon": null,
     "is_adult": true
   }
 ]
@@ -175,12 +166,16 @@ GET /api/categories/1/
 **Response:**
 
 ```json
-  {
+{
   "id": 1,
   "name": "Party",
+  "description": "Light-hearted prompts for any party setting.",
+  "icon": "/media/category_icons/party.png",
   "is_adult": false
 }
 ```
+
+> `icon` contains the uploaded category icon URL, or `null` if no icon is set.
 
 ---
 
