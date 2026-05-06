@@ -1,5 +1,7 @@
 # 🎯 Truth or Dare
 
+[![CI](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml/badge.svg)](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml)
+
 ![Python](https://img.shields.io/badge/Python-3.11.2-blue?logo=python&style=flat-square)
 ![Django](https://img.shields.io/badge/Django-5.1.6-%234092E5?logo=django&logoColor=white&style=flat-square)
 ![DRF](https://img.shields.io/badge/DRF-3.15.2-%23456394?logo=django&logoColor=white&style=flat-square)
@@ -149,13 +151,13 @@ is provided in a separate document: [docs/api.md](./docs/api.md).
 
 ## 🧪 Running Tests
 
-Using Django's test runner:
+Install development dependencies first (includes runtime requirements plus `pytest` and `pytest-django`):
 
 ```bash
-python manage.py test
+pip install -r requirements-dev.txt
 ```
 
-Or with Pytest:
+Then run the tests with Pytest:
 
 ```bash
 pytest apps/gameplay/
