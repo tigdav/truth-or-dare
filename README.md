@@ -6,7 +6,7 @@
 ![Django](https://img.shields.io/badge/Django-5.2.15-%234092E5?logo=django&logoColor=white&style=flat-square)
 ![DRF](https://img.shields.io/badge/DRF-3.16.1-%23456394?logo=django&logoColor=white&style=flat-square)
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13%2B-%234983db?logo=postgresql&logoColor=white&style=flat-square)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14%2B-%234983db?logo=postgresql&logoColor=white&style=flat-square)
 ![dotenv](https://img.shields.io/badge/python--dotenv-1.0.1-%23E64398?logo=python&logoColor=white&style=flat-square)
 
 ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
