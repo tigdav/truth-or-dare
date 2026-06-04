@@ -1,4 +1,4 @@
-# 🎯 Truth or Dare
+# Truth or Dare
 
 [![CI](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml/badge.svg)](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml)
 
@@ -20,52 +20,52 @@ interface.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- 🎲 **Question Randomizer**  
+- **Question Randomizer**  
   Delivers up to 5 unique questions per request, filtered by `question_type` (`"truth"` or `"dare"`) and selected
   categories.  
   Allows exclusion of previously seen questions to ensure smooth, non-repetitive gameplay.
 
-- 🧩 **Flexible Category System**  
+- **Flexible Category System**  
   Questions are organized into fully customizable categories with optional age restrictions (e.g., 18+), descriptive
   content, and icon support —  
   enabling clients to tailor experiences for different audiences.
 
-- 📜 **Public Game Rules API**  
+- **Public Game Rules API**  
   Provides a read-only endpoint to retrieve gameplay rules, presented in a predefined order for easy integration.
 
-- 🔐 **Role-Based API Access**  
+- **Role-Based API Access**  
   Read operations are publicly accessible, while create, update, and delete actions for questions and categories are
   restricted to admins.  
   Access is securely enforced via custom DRF permissions.
 
-- ⚙️ **Clean & Modular Codebase**  
+- **Clean & Modular Codebase**  
   Built following Django best practices with a clear separation of concerns and a RESTful API design.
 
-- ✅ **Automated Testing with Pytest**  
+- **Automated Testing with Pytest**  
   Automated tests using `pytest` and `pytest-django` cover core gameplay flows such as question creation,
   category creation, and random question selection.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- 🐍 Python 3.11.2
-- 🧩 Django 5.1.6
-- 🛠 Django REST Framework 3.15.2
-- 🗃 PostgreSQL (via `psycopg2` 2.9.10)  
+- Python 3.11.2
+- Django 5.1.6
+- Django REST Framework 3.15.2
+- PostgreSQL (via `psycopg2` 2.9.10)  
   _Can be swapped to SQLite, MySQL, or another Django‑supported engine by updating the `DATABASES` settings
   in `settings.py` or your `.env`._
-- 🧪 Pytest & DRF test tools
-- 📦 Modular project structure (`apps/gameplay/`)
-- 🔐 Custom DRF permissions for role-based access control
-- 📦 Environment management with `python-dotenv`
-- 🖼 Pillow for image processing
+- Pytest & DRF test tools
+- Modular project structure (`apps/gameplay/`)
+- Custom DRF permissions for role-based access control
+- Environment management with `python-dotenv`
+- Pillow for image processing
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Clone the repository
 
@@ -114,7 +114,7 @@ python manage.py runserver
 
 ---
 
-## 🔧 Environment Configuration
+## Environment Configuration
 
 Before running the project, set up environment variables.
 
@@ -124,7 +124,7 @@ Copy the example file and fill in your local secrets:
 cp .env.example .env
 ```
 
-> 🔐 Do **not** commit the real `.env` file to version control — use it for local development or deployment only.
+> Do **not** commit the real `.env` file to version control — use it for local development or deployment only.
 
 Minimal contents of `.env.example`:
 
@@ -142,14 +142,14 @@ DB_HOST=localhost
 DB_PORT=5432
 ```
 
-## 📡 API Documentation
+## API Documentation
 
 The API reference, including available endpoints, request/response examples, and usage notes,  
 is provided in a separate document: [docs/api.md](./docs/api.md).
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 Install development dependencies first (includes runtime requirements plus `pytest` and `pytest-django`):
 
@@ -167,7 +167,7 @@ The test suite covers core gameplay flows and endpoint behavior.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 truth-or-dare/
@@ -204,14 +204,14 @@ truth-or-dare/
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.  
 Feel free to use it for both personal and commercial projects.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!  
 Feel free to open issues or submit pull requests. Please include relevant tests and clear commit messages.
