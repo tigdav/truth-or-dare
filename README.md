@@ -3,8 +3,8 @@
 [![CI](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml/badge.svg)](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml)
 
 ![Python](https://img.shields.io/badge/Python-3.11.2-blue?logo=python&style=flat-square)
-![Django](https://img.shields.io/badge/Django-5.1.6-%234092E5?logo=django&logoColor=white&style=flat-square)
-![DRF](https://img.shields.io/badge/DRF-3.15.2-%23456394?logo=django&logoColor=white&style=flat-square)
+![Django](https://img.shields.io/badge/Django-5.2.15-%234092E5?logo=django&logoColor=white&style=flat-square)
+![DRF](https://img.shields.io/badge/DRF-3.16.1-%23456394?logo=django&logoColor=white&style=flat-square)
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13%2B-%234983db?logo=postgresql&logoColor=white&style=flat-square)
 ![dotenv](https://img.shields.io/badge/python--dotenv-1.0.1-%23E64398?logo=python&logoColor=white&style=flat-square)
@@ -52,8 +52,8 @@ interface.
 ## Tech Stack
 
 - Python 3.11.2
-- Django 5.1.6
-- Django REST Framework 3.15.2
+- Django 5.2.15
+- Django REST Framework 3.16.1
 - PostgreSQL (via `psycopg2` 2.9.10)  
   _Can be swapped to SQLite, MySQL, or another Django‑supported engine by updating the `DATABASES` settings
   in `settings.py` or your `.env`._
