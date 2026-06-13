@@ -1,6 +1,7 @@
 # Truth or Dare
 
 [![CI](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml/badge.svg)](https://github.com/tigdav/truth-or-dare/actions/workflows/ci.yml)
+[![Ruff](https://img.shields.io/badge/code%20style-ruff-%23D7FF64?logo=ruff&logoColor=black&style=flat-square)](https://github.com/astral-sh/ruff)
 
 ![Python](https://img.shields.io/badge/Python-3.11.2-blue?logo=python&style=flat-square)
 ![Django](https://img.shields.io/badge/Django-5.2.15-%234092E5?logo=django&logoColor=white&style=flat-square)
@@ -164,6 +165,17 @@ pytest apps/gameplay/
 ```
 
 The test suite covers core gameplay flows and endpoint behavior.
+
+---
+
+## Linting & Formatting
+
+Code is linted and formatted with [Ruff](https://github.com/astral-sh/ruff):
+
+```bash
+ruff check .
+ruff format --check .
+```
 
 ---
 
