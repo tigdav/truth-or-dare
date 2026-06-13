@@ -13,24 +13,18 @@ class QuestionViewSet(viewsets.ModelViewSet):
     serializer_class = QuestionSerializer
     permission_classes = [IsAdminUser]
 
-    @action(
-        detail=False,
-        methods=['post'],
-        url_path='random',
-        permission_classes=[AllowAny]
-    )
+    @action(detail=False, methods=["post"], url_path="random", permission_classes=[AllowAny])
     def get_random_questions(self, request):
         req_serializer = QuestionRequestSerializer(data=request.data)
         req_serializer.is_valid(raise_exception=True)
 
-        question_type = req_serializer.validated_data['question_type']
-        category_ids = req_serializer.validated_data['category_ids']
-        excluded_ids = req_serializer.validated_data.get('excluded_ids', [])
+        question_type = req_serializer.validated_data["question_type"]
+        category_ids = req_serializer.validated_data["category_ids"]
+        excluded_ids = req_serializer.validated_data.get("excluded_ids", [])
 
-        queryset = Question.objects.filter(
-            question_type=question_type,
-            category__id__in=category_ids
-        ).exclude(id__in=excluded_ids)
+        queryset = Question.objects.filter(question_type=question_type, category__id__in=category_ids).exclude(
+            id__in=excluded_ids
+        )
 
         random_questions = queryset.order_by(Random())[:5]
 
