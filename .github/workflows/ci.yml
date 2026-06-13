@@ -56,6 +56,10 @@ jobs:
         working-directory: backend
         run: ruff check .
 
+      - name: Check formatting with Ruff
+        working-directory: backend
+        run: ruff format --check .
+
       - name: Run tests
         working-directory: backend
         run: pytest apps/gameplay/
