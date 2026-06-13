@@ -45,10 +45,10 @@ def test_rules_listed_in_order_field():
 
 @pytest.mark.django_db
 def test_rules_endpoint_does_not_allow_write():
-    User.objects.create_user(username='admin', password='adminpass', is_staff=True)
+    User.objects.create_user(username="admin", password="adminpass", is_staff=True)
     client = APIClient()
-    client.login(username='admin', password='adminpass')
+    client.login(username="admin", password="adminpass")
 
-    response = client.post("/api/rules/", {"text": "Should not work"}, format='json')
+    response = client.post("/api/rules/", {"text": "Should not work"}, format="json")
 
     assert response.status_code == 405

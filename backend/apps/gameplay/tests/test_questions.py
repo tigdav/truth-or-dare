@@ -10,21 +10,21 @@ def test_create_dare_question_in_strange_habits_category():
         id=6,
         name="Unusual Habits",
         description="Quirky rituals, everyday oddities, and personal peculiarities.",
-        is_adult=False
+        is_adult=False,
     )
 
-    User.objects.create_user(username='admin', password='adminpass', is_staff=True)
+    User.objects.create_user(username="admin", password="adminpass", is_staff=True)
 
     client = APIClient()
-    client.login(username='admin', password='adminpass')
+    client.login(username="admin", password="adminpass")
 
     data = {
         "text": "Do 10 squats while repeating your favorite weird word.",
         "question_type": "dare",
-        "category_id": category.id
+        "category_id": category.id,
     }
 
-    response = client.post("/api/questions/", data, format='json')
+    response = client.post("/api/questions/", data, format="json")
 
     assert response.status_code == 201
 
@@ -51,9 +51,9 @@ def test_anonymous_cannot_list_questions():
 
 @pytest.mark.django_db
 def test_non_admin_cannot_list_questions():
-    User.objects.create_user(username='alice', password='alicepass')
+    User.objects.create_user(username="alice", password="alicepass")
     client = APIClient()
-    client.login(username='alice', password='alicepass')
+    client.login(username="alice", password="alicepass")
 
     response = client.get("/api/questions/")
 
@@ -63,19 +63,13 @@ def test_non_admin_cannot_list_questions():
 @pytest.mark.django_db
 def test_admin_can_list_questions():
     category = QuestionCategory.objects.create(
-        name="Listable",
-        description="Questions can be listed for admins.",
-        is_adult=False
+        name="Listable", description="Questions can be listed for admins.", is_adult=False
     )
-    Question.objects.create(
-        text="Sample listed question?",
-        question_type="truth",
-        category=category
-    )
+    Question.objects.create(text="Sample listed question?", question_type="truth", category=category)
 
-    User.objects.create_user(username='admin', password='adminpass', is_staff=True)
+    User.objects.create_user(username="admin", password="adminpass", is_staff=True)
     client = APIClient()
-    client.login(username='admin', password='adminpass')
+    client.login(username="admin", password="adminpass")
 
     response = client.get("/api/questions/")
 
